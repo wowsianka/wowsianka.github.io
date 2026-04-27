@@ -489,27 +489,80 @@ footer {
 @media (max-width: 1024px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
         grid-template-areas: 
             "about about"
-            "skills status"
-            "projects projects"
-            "contact cta";
+            "contact contact"
+            "skills skills"
+            "experience experience"
+            "education education";
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    header {
+        padding: 1rem 0;
+    }
+
+    nav {
+        padding: 0 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1.5px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .bento-grid {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "about"
-            "skills"
-            "status"
-            "projects"
             "contact"
-            "cta";
+            "skills"
+            "experience"
+            "education";
+        gap: 1rem;
     }
-    
-    h1 { font-size: 2.5rem; }
-    
-    .nav-links { display: none; }
+
+    .tile {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .nav-links {
+        display: none; /* Hide desktop nav on mobile for clean look */
+    }
+
+    .project-detail summary {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .detail-content {
+        padding: 0 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    .t-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .t-year {
+        min-width: unset;
+        align-self: flex-start;
+    }
 }
