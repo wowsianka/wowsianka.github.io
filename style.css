@@ -485,84 +485,68 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Responsive */
+/* Responsive Overhaul */
 @media (max-width: 1024px) {
     .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas: 
-            "about about"
-            "contact contact"
-            "skills skills"
-            "experience experience"
-            "education education";
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .tile {
+        grid-area: auto !important;
+        min-height: auto !important;
     }
 }
 
 @media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
     .container {
-        padding: 1.5rem;
+        padding: 1rem;
+        width: 100%;
     }
 
     header {
-        padding: 1rem 0;
-    }
-
-    nav {
-        padding: 0 1.5rem;
+        position: relative; /* Better for mobile scroll */
+        padding: 1.5rem 0;
     }
 
     h1 {
-        font-size: 2.5rem;
-        letter-spacing: -1.5px;
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 
     .section-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .bento-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "about"
-            "contact"
-            "skills"
-            "experience"
-            "education";
-        gap: 1rem;
+        font-size: 1.8rem;
+        margin-top: 2rem;
     }
 
     .tile {
         padding: 1.5rem;
-        border-radius: 20px;
+    }
+
+    /* Prevent text being cut off */
+    .tile-about h1 {
+        font-size: 2.5rem;
+        word-wrap: break-word;
     }
 
     .nav-links {
-        display: none; /* Hide desktop nav on mobile for clean look */
-    }
-
-    .project-detail summary {
-        padding: 1.25rem 1.5rem;
-    }
-
-    .detail-content {
-        padding: 0 1.5rem 1.5rem;
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2.25rem;
-    }
-
     .t-item {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.25rem;
     }
-
+    
     .t-year {
-        min-width: unset;
         align-self: flex-start;
+        margin-bottom: 0.5rem;
     }
 }
